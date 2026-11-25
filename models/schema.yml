@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_pbp_fourth_downs
-    description: "One row per 4th-down punt, field goal, run or pass in the regular seasons from 2020 to 2025."
+    description: "One row per 4th-down punt, field goal, run or pass in the regular seasons from 2020 on."
     columns:
       - name: play_key
         description: "Unique key for a play: game_id and play_id joined together."
@@ -64,5 +64,38 @@ models:
         data_tests:
           - not_null
       - name: posteam
+        data_tests:
+          - not_null
+
+  - name: mart_go_for_it_team_season
+    description: "One row per team-season: go-for-it attempts, conversions and average EPA."
+    columns:
+      - name: season
+        data_tests:
+          - not_null
+      - name: posteam
+        data_tests:
+          - not_null
+
+  - name: mart_go_for_it_situation_league
+    description: "League-wide go-for-it conversion rate and EPA by distance and field zone, pooled 2020-2025."
+    columns:
+      - name: distance_bucket
+        data_tests:
+          - not_null
+      - name: field_zone
+        data_tests:
+          - not_null
+
+  - name: mart_go_for_it_vs_expected
+    description: "Per team-season: actual conversions vs. expected from a leave-one-out league benchmark (the team's own plays removed)."
+    columns:
+      - name: season
+        data_tests:
+          - not_null
+      - name: posteam
+        data_tests:
+          - not_null
+      - name: expected_conversions
         data_tests:
           - not_null
