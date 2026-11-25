@@ -50,7 +50,7 @@ Each go-for-it play is compared with what other teams did in the same situation 
 
 The Eagles were below average in 2020 and 2021 (22nd and 30th in conversions above expected), among the best in the league from 2022 to 2024 (2nd, 1st and 5th), and closer to the middle in 2025 (13th). Their EPA per attempt tells the same story, and stays high in 2025 (9th) even though their conversion count was near expected. The jump starts in 2022, when the tush push became their signature play, but this analysis does not isolate that play, so the link is a hypothesis, not a finding. League averages are not exactly zero because the benchmark pools all six seasons.
 
-With only 20 to 35 attempts per season, I measured how far luck alone could move each number. The standard error is the typical swing you'd expect if the Eagles were an average team in the same situations, and the z-score is how many standard errors the Eagles are above or below that. No single season is more than 2 standard errors from average (z-scores of -0.28, -1.01, +1.58, +1.74, +1.35 and +0.30 for 2020 to 2025). Across all six seasons the Eagles are +9.3 conversions above expected with a standard error of 6.1 (z = 1.5): suggestive of an edge, but luck can't be ruled out.
+With only 20 to 35 attempts per season, I measured how far luck alone could move each number. The standard error is the typical swing you'd expect if the Eagles were an average team in the same situations, and the z-score is how many standard errors the Eagles are above or below that. No single season is more than 2 standard errors from average (z-scores of -0.28, -1.01, +1.58, +1.74, +1.35 and +0.30 for 2020 to 2025). Across all six seasons the Eagles are +9.3 conversions above expected with a standard error of 6.1 (z = 1.5). This could suggest an edge, but luck cannot be ruled out.
 
 I first built the benchmark with all teams' plays pooled, then rebuilt it so the team being analyzed is not included in the league benchmark. The results moved by at most 0.1 conversions per season, so the finding does not depend on that choice.
 
@@ -89,7 +89,7 @@ I first built the benchmark with all teams' plays pooled, then rebuilt it so the
 - Situations are grouped only by distance and field zone, so a tush push is treated like any other 4th-and-1. Time left in the game, weather, kicker range and the opponent are not considered. The field zone cutoffs are approximate.
 - Some situations have few plays, so their rates are noisy.
 - This describes what teams did. It does not say why, or whether going for it was the better choice.
-- Small samples: the Eagles had 20 to 35 go-for-it attempts per season, so any single season could be luck. Across all six seasons they are +9.3 conversions above expected (z = 1.5), which is suggestive but not conclusive.
+- Small samples: the Eagles had 20 to 35 go-for-it attempts per season, so any single season could be luck. Across all six seasons they are +9.3 conversions above expected (z = 1.5), which could suggest an edge but is not conclusive.
 - I highlight 2022 to 2024 because the tush push became the Eagles' signature play in 2022, not because of how those seasons turned out. Still, three seasons with 26 to 32 attempts each is a small base for a strong claim.
 - Ranks include every team, even those with only a few go-for-it attempts in a season, so one long play can move a small team's rank a lot.
 - Teams choose when to go for it, so EPA on go-for-it plays reflects favorable situations, not just execution. It also does not compare going for it with punting or kicking.
