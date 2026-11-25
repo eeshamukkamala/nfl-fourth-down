@@ -1,0 +1,23 @@
+name: dbt build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install dbt-duckdb duckdb pyarrow
+      - name: Download data
+        run: |
+          mkdir -p data
+          for y in 2020 2021 2022 2023 2024 2025; do
+            curl -L -f -o data/play_by_play_$y.parquet https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_$y.parquet
+          done
+      - run: dbt build
