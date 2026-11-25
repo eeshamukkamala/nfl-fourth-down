@@ -1,0 +1,68 @@
+version: 2
+
+models:
+  - name: stg_pbp_fourth_downs
+    description: "One row per 4th-down punt, field goal, run or pass in the regular seasons from 2020 to 2025."
+    columns:
+      - name: play_key
+        description: "Unique key for a play: game_id and play_id joined together."
+        data_tests:
+          - unique
+          - not_null
+      - name: posteam
+        description: "The offense (the team with the ball)."
+        data_tests:
+          - not_null
+      - name: down
+        description: "Always 4 in this model."
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [4]
+                quote: false
+      - name: play_type
+        description: "pass, run, punt or field_goal."
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['pass', 'run', 'punt', 'field_goal']
+      - name: is_go_for_it
+        description: "1 if the play was a run or pass, 0 for a punt or field goal."
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [0, 1]
+                quote: false
+
+  - name: int_fourth_down_situations
+    description: "One row per play, with labels for distance, field zone and score state."
+    columns:
+      - name: play_key
+        data_tests:
+          - unique
+          - not_null
+      - name: distance_bucket
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['1', '2', '3', '4', '5-10', '11+']
+      - name: score_state
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['trailing', 'close', 'leading']
+      - name: field_zone
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['red_zone', 'comfortable_field_goal_range', 'field_goal_range', 'midfield', 'open_field']
+
+  - name: mart_go_rate_team_season
+    description: "Fourth-down go-for-it counts and go rate for each team and season."
+    columns:
+      - name: season
+        data_tests:
+          - not_null
+      - name: posteam
+        data_tests:
+          - not_null

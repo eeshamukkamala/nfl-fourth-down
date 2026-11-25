@@ -1,0 +1,6 @@
+nfl_fourth_down:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: nfl_fourth_down.duckdb
