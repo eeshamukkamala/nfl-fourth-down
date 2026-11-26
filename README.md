@@ -1,5 +1,7 @@
 # Eagles fourth-down aggressiveness, 2020-2025
 
+[![dbt build](https://github.com/eeshamukkamala/nfl-fourth-down/actions/workflows/dbt.yml/badge.svg)](https://github.com/eeshamukkamala/nfl-fourth-down/actions/workflows/dbt.yml)
+
 How often do the Philadelphia Eagles go for it on 4th down, and how does that compare with the rest of the NFL once you account for the situations they faced? Built with dbt, DuckDB and SQL on nflverse play-by-play data (regular seasons 2020-2025).
 
 ## Question
